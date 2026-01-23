@@ -357,22 +357,6 @@ python model_evaluation/emotional_empathy_evaluation.py
 # Evaluate other dimensions...
 ```
 
-#### 3. Batch Evaluate All Dimensions
-
-```bash
-# Run all evaluation scripts sequentially
-for script in model_evaluation/*_evaluation.py; do
-    python "$script"
-done
-```
-
-#### 4. Calculate Overall Score
-
-```bash
-# Calculate average scores across all dimensions
-python model_evaluation/calculate_average_score.py
-```
-
 ### Evaluation Configuration
 
 Before running evaluations, modify the configuration in each script:
@@ -385,63 +369,6 @@ DATASET_PATH = "/path/to/test_data.json"    # Test dataset path
 OUTPUT_PATH = "/path/to/output/results.json" # Output path
 MAX_CONCURRENCY = 10                         # Max concurrency
 ```
-
-### Dataset Evaluation
-
-To evaluate the quality of training dataset annotations, use scripts in `dataset_evaluation/`:
-
-```bash
-# Evaluate co-frequency ability annotations in dataset
-python dataset_evaluation/cofrequency_evaluation.py
-
-# Evaluate other dimensions...
-```
-
-### Evaluation Results
-
-After evaluation, JSON format result files will be generated, containing:
-- Detailed scores for each sample (0-3 points)
-- Evaluation analysis
-- Average score statistics
-- Success rate statistics
-
-Example output:
-```json
-[
-  {
-    "Sample ID": "sample_001",
-    "Dialog ID": "dialog_001",
-    "Turn Number": 1,
-    "Co-frequency Score": 3,
-    "Analysis": "The model accurately captured the client's anxiety..."
-  }
-]
-```
-
-## 📝 Citation
-
-If you use the code or methods from this project, please cite our paper:
-
-```bibtex
-@article{hihappy2024,
-  title={HiHappy: Achieving Co-frequency in Psychological Counseling},
-  author={Your Name},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2024}
-}
-```
-
-## 🤝 Contributing
-
-Issues and Pull Requests are welcome!
-
-### Contribution Guidelines
-
-1. Fork this repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📄 License
 
@@ -468,33 +395,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   - Liu, Z., et al. (2021). Towards Empathetic Open-domain Conversation Models.
   - Sharma, A., et al. (2020). A Computational Approach to Understanding Empathy.
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-```
-MIT License
-
-Copyright (c) 2024 HiHappy Team
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 ## 📊 Project Statistics
 
@@ -519,3 +419,4 @@ Made with ❤️ by HiHappy Team
 [Back to Top](#hihappy-achieving-co-frequency-in-psychological-counseling)
 
 </div>
+
