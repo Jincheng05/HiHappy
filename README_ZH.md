@@ -340,22 +340,6 @@ python model_evaluation/emotional_empathy_evaluation.py
 # 评估其他维度...
 ```
 
-#### 3. 批量评估所有维度
-
-```bash
-# 依次运行所有评估脚本
-for script in model_evaluation/*_evaluation.py; do
-    python "$script"
-done
-```
-
-#### 4. 计算综合得分
-
-```bash
-# 计算所有维度的平均分数
-python model_evaluation/calculate_average_score.py
-```
-
 ### 评估配置
 
 在运行评估前，需要修改各评估脚本中的配置项：
@@ -368,63 +352,6 @@ DATASET_PATH = "/path/to/test_data.json"    # 测试数据集路径
 OUTPUT_PATH = "/path/to/output/results.json" # 结果输出路径
 MAX_CONCURRENCY = 10                         # 最大并发数
 ```
-
-### 数据集评估
-
-如果需要评估训练数据集的质量，可以使用 `dataset_evaluation/` 文件夹中的脚本：
-
-```bash
-# 评估数据集的共频能力标注质量
-python dataset_evaluation/cofrequency_evaluation.py
-
-# 评估其他维度...
-```
-
-### 评估结果
-
-评估完成后，会生成JSON格式的结果文件，包含：
-- 每个样本的详细得分（0-3分）
-- 评估分析说明
-- 平均得分统计
-- 成功率统计
-
-示例输出：
-```json
-[
-  {
-    "样本ID": "sample_001",
-    "对话ID": "dialog_001",
-    "轮次号": 1,
-    "共频能力得分": 3,
-    "分析": "模型精准捕捉了来访者的焦虑情绪..."
-  }
-]
-```
-
-## 📝 论文
-
-如果你使用了本项目的代码或方法，请引用我们的论文：
-
-```bibtex
-@article{hihappy2024,
-  title={HiHappy: Achieving Co-frequency in Psychological Counseling},
-  author={Your Name},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2024}
-}
-```
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
-### 贡献指南
-
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
 
 ## 📄 许可证
 
@@ -451,35 +378,6 @@ python dataset_evaluation/cofrequency_evaluation.py
 - **心理咨询对话系统**：
   - Liu, Z., et al. (2021). Towards Empathetic Open-domain Conversation Models.
   - Sharma, A., et al. (2020). A Computational Approach to Understanding Empathy.
-
-
-## 📄 许可证
-
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
-
-```
-MIT License
-
-Copyright (c) 2024 HiHappy Team
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 
 ## 📊 项目统计
