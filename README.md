@@ -92,25 +92,6 @@ Emotion Vector = [
 - **Positive Emotion Causes**: The counselor's empathetic response acknowledged their efforts in caring for family members, making them feel understood, and increasing their sense of calm
 - **Negative Emotion Causes**: Long-term care for sick family members leads to sleep deprivation, and concerns about their own health status produce persistent anxiety and mild helplessness
 
-#### 2.3 Dynamic Strategy Adjustment Mechanism
-
-The counselor model dynamically adjusts strategies based on the summarizer's analysis:
-
-**When Emotions Are Extremely Negative** (e.g., Helpless/Hopeless ≥ 0.7):
-- Prioritize humanistic empathetic acceptance techniques
-- Avoid direct cognitive debate interventions
-- Slow down the pace and increase listening
-
-**When Emotions Gradually Improve** (Calm + Happy ≥ 0.8):
-- Timely introduce REBT/CBT cognitive debate techniques
-- Guide clients to identify irrational cognitions
-- Advance cognitive restructuring
-
-**When Emotions Are Stable** (Calm ≥ 0.6 and Negative Emotions ≤ 0.3):
-- Combine solution-focused brief therapy to advance problem-solving
-- Consolidate rational cognition
-- Develop action plans
-
 ### 3. Model Training Optimization
 
 #### 3.1 LoRA Efficient Fine-tuning
